@@ -1,0 +1,461 @@
+@font-face {
+    font-family: Oswald;
+    src: url(../styles/Oswald-Medium.ttf);
+}
+body{
+    margin: 0%;
+    padding-left: 3%;
+    padding-right: 4%;
+    font-family: Oswald;
+    background-color: #c4c4c4;
+}
+@keyframes morphing {
+    0% {
+        right: 0%;
+        width: 35%;
+    }
+    50%{
+        right: 0%;
+        width: 100%;
+    }
+    100% {
+        right: 75%;
+        width: 25%;
+    }
+}
+@keyframes reverse-morphing {
+    0% {
+        right: 75%;
+        width: 25%;
+    }
+    50%{
+        right: 0%;
+        width: 100%;
+    }
+    100% {
+        right: 0%;
+        width: 35%;
+    }
+}
+.state0#bodyCover{
+    position: absolute;
+    background-color: white;
+    width: 35%;
+    height: 100%;
+    z-index: -1;
+    right: 0%;
+    animation: reverse-morphing 0.8s ease-in-out 1 forwards;
+}
+.state1#bodyCover{       
+    position: absolute;
+    background-color: white;
+    width: 35%;
+    height: 100%;
+    z-index: -1;
+    right: 0%;
+    animation: morphing 0.8s ease-in-out 0.5s  1 forwards;
+}
+.part{
+    width: 100%;
+    /*border: 1px solid black;*/
+    padding: 1%;
+}
+.width100{
+    width: 100%;
+    flex-wrap: wrap;
+}
+@keyframes landing {
+    0% {
+    transform: translateY(0%) translateZ(0%);
+    box-shadow: 30px 30px #444444;
+    }
+    40%{
+        opacity: 1;
+    }
+    100% {
+    transform: translateY(10%) translatex(5%);
+    box-shadow: 0px 0px #444444;
+    opacity: 0;
+    }
+}
+@keyframes liftoff {
+    0% {
+    transform: translateY(10%) translatex(5%);
+    box-shadow: 0px 0px #444444;    
+    opacity: 0;
+    }
+    40%{
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0%) translateZ(0%);
+        box-shadow: 30px 30px #444444;
+        opacity: 1;
+        }
+}
+.state0#entete{
+    background-color: white;
+    width: 50%;
+    padding: 2%;
+    margin-bottom: 5%;
+    border-radius: 20px;  
+    opacity: 0;
+    animation: display 0.5s ease-in-out 1s 1  forwards alternate;
+}
+
+.state1#entete{
+    background-color: white;
+    width: 50%;
+    padding: 2%;
+    margin-bottom: 5%;   
+    border-radius: 20px;
+    opacity: 1;
+    animation: disappear 0.5s ease-in-out 1 forwards alternate;
+}
+@keyframes disappear {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+@keyframes display {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.state0#photoprofil{
+    position: absolute;
+    height: auto;
+    width: 13.5%;
+    margin-left: 60%;   
+    border-radius: 20px;
+    opacity: 0;
+    animation: display 0.5s ease-in-out 1s 1  forwards alternate;
+
+}
+.state1#photoprofil{
+    position: absolute;
+    height: auto;
+    width: 13.5%;
+    margin-left: 60%;
+    border-radius: 20px;
+    opacity: 1;
+    animation: disappear 0.5s ease-in-out 1 forwards alternate;
+}
+button{
+    font-family: Oswald;
+    background-color: #444444;
+    border-radius: 20px;
+    border: none;
+    font-size: 22px;
+    font-weight: bold;
+    width: 15%; 
+    position: absolute;
+    top: 80%;
+    height: 50px;
+    &:hover{
+        cursor: pointer;
+        transform: scale(1.02);
+    }
+}
+.state0#blocProjets{
+    display: none;
+    opacity: 0;
+    animation: disappear 0.5s ease-in-out 1 forwards alternate;
+}
+.state1#blocProjets{
+    /*border: 1px solid black;*/
+    opacity: 0;
+    width: 50%;
+    position: absolute;
+    top: 20%;
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+    animation: display 0.5s ease-in-out 1s 1  forwards alternate;
+}
+ul{    
+    padding-inline-start: 0px;
+    
+    list-style-type: none;
+}
+.listeProjets{
+    font-size: larger;
+    line-height: 30px;
+}
+.listeProjets:hover{
+    list-style-type: "►  ";
+    cursor: pointer;
+    /*padding-inline-start: 10px;*/
+}
+.listeProjets:active{
+    
+    padding-inline-start: 10px;
+}
+.displayProjets{
+    width: 120%;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: -40%;
+}
+.blocImgProjets{
+    width: 110%;
+    /*border: 1px solid yellow;*/
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.cadreImgProjet{
+    width: 50%;
+    height: auto;
+    position: relative;
+}
+.ImgProjet{
+    zoom: 20%;
+}
+.zoomer{
+    width: 90%;
+    height: 90%;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    opacity: 10%;
+}
+
+@for $i from 0 to 6 {
+    .ImgProjet#{$i} {
+        zoom: 20%;
+    }
+    .zoomer:checked + .ImgProjet#{$i} {
+      zoom: 40%;
+      z-index: 99;
+    }
+  }
+
+.zoomer:checked {
+    z-index: 100;
+}
+
+
+.hideAnimations{
+    display: none;
+}
+.displayAnimations{
+    display: flex;
+    position: absolute;
+    left: -10%;
+    width: 150%;
+    justify-content: space-around;
+    align-items: center;
+}
+.objectif{
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+}
+
+
+
+
+.flexHrz{
+    display: flex;
+    
+}
+.spaBetw{
+    justify-content: space-between;
+    align-items: center;
+}
+nav{
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.collapseFull{
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+}
+.collapse_header{
+    width: 95%;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    height: 40px;
+    background: #1F271B;
+    border-radius: 3px;
+    color: white;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+@keyframes openCollapse {
+    from { transform: scaleY(0); transform-origin: top; }
+  to   { transform: scaleY(1); }
+}
+.collapse_content{
+    background: #DCC7BE;
+    font-size: 18px;
+    margin-top: -30px;
+    padding-top: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    height: auto;
+    width: 95%;
+    border-radius: 3px;
+    color: #1F271B;
+    animation: openCollapse 0.4s ease-out 1 backwards;
+}
+@keyframes openCollapseTxt {
+    from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.content-delay{
+    animation: openCollapseTxt 0.5s 0.3s ease-out 1 backwards;
+}
+@keyframes downingArrow {
+    from{ transform: rotate(0deg);}
+    to{transform: rotate(180deg);}
+}
+.downingArrow{
+    transform: rotate(180deg);
+    animation: downingArrow 0.5s ease-out 1 backwards;
+}
+@keyframes uppingArrow {
+    from{ transform: rotate(180deg);}
+    to{transform: rotate(360deg);}
+}
+.uppingArrow{
+    transform: rotate(360deg);
+    animation: uppingArrow 0.2s ease-out 1 backwards;
+}
+.spaAround{
+    justify-content: space-around;
+    align-items: center;
+}.ficheCollapse{
+    margin-bottom: 5%;
+    margin-top: 2%;
+}
+
+.collapseHalf{
+    display: flex;
+    flex-direction: column;
+    width: 49%;
+    margin: 0%;
+    align-self: start;
+
+}
+
+.state0#theButton::before{
+    content: 'Projets Personnels';
+}
+.state1#theButton::before{
+    
+    content: 'Accueil';
+}
+
+.state0#contact{
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    width: 15%;
+    opacity: 0;
+    animation: display 0.5s ease-in-out 1s 1  forwards alternate;
+}
+.state1#contact{
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    width: 15%;
+    opacity: 1;
+    animation: disappear 0.5s ease-in-out 1 forwards alternate;
+}
+a{
+    text-decoration: none;
+    color: black;
+    
+    &:hover{
+    -webkit-text-stroke: 1px white;
+    }
+}
+
+
+@keyframes wip {
+    from{
+        width: 3.5%;
+    }
+    to{
+        width: 20%;
+    }
+}
+@keyframes wiptxt {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.wip{
+    
+    background-color: #8b7878;
+    position: absolute;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10%;
+    width: 3.5%;
+    border-radius: 10px 0px 0px 10px;
+    padding-left: 10px;
+    overflow: hidden;
+    
+        &__img{
+            width: 40px;
+            margin-right: 10px;
+        }
+        & p{
+            opacity: 0;
+        }
+        &:hover{
+            cursor: pointer;
+            animation: wip ease-in-out 0.5s 1  forwards alternate;
+
+        }
+        &:hover p{
+            animation: wiptxt 0.1s ease-in-out  0.5s 1  forwards alternate;
+        }
+}
+@keyframes colorbender {
+    from{
+        color: black;
+    }
+    to{
+        color: white;
+    }
+}
+
+h1:hover{
+    color: black;
+    /*
+    transform-origin: right;
+    animation: colorbender ease-in-out 0.5s  1 forwards;*/
+}
+h1::selection{
+    color: #dd8965;
+}
+li::selection{
+    color: #e7d3cb;
+}

@@ -8,7 +8,7 @@ function Header() {
       <img src={Logo} alt="" />
       <nav>
         <li><a href="#banner"><p>Accueil</p></a></li>
-        <li><a href="/"><p>Carte</p></a></li>
+        <li><a href="#carte"><p>Carte</p></a></li>
         <li><a href="/"><p>Réserver</p></a></li>
       </nav>
     </div>

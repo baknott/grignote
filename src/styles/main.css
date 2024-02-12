@@ -7,6 +7,7 @@ body {
   margin: 0%;
   font-family: Arcturus;
   background-color: whitesmoke;
+  border-width : 0;
 }
 .header{
   width: 95%;
@@ -24,10 +25,8 @@ a {
   width: 100%;
   position: absolute  ;
   top: -30%;
-  scroll-behavior: smooth;
 }
-#banner{
-  margin-left: 1px;
+html{
   scroll-behavior: smooth;
 }
 .banner #banner{
@@ -39,7 +38,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  top: 50%;
+  top: 30%;
   left: 26%;
   letter-spacing: 8px;
   color: whitesmoke;
@@ -51,14 +50,29 @@ h1{
 }
 h2{
   font-size: 30px;
+  text-align: center;
 
 }
-
-.part {
-  width: 100%;
-  /*border: 1px solid black;*/
-  padding: 1%;
+.carte{
+  display: flex;
+  justify-content: space-around;
+  margin: 5%;
+  margin-left: 0%;
 }
+.service{
+  display: inline-block;
+  text-align: center;
+  max-width: 250px;
+  
+}
+.plat{
+  font-size: 16px;
+  margin-bottom: 0px;
+}
+i{
+  font-size: smaller;
+}
+
 
 button {
   font-family: Oswald;

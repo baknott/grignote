@@ -1,21 +1,26 @@
 @charset "UTF-8";
 @font-face {
-  font-family: Arcturus;
-  src: url(../styles/Arcturus-Book.ttf);
+  font-family: Inria;
+  src: url(../styles/InriaSans-Regular.ttf);
 }
 body {
   margin: 0%;
-  font-family: Arcturus;
+  font-family: Inria;
   background-color: whitesmoke;
   border-width : 0;
+}
+html{
+  scroll-behavior: smooth;
 }
 .header{
   width: 95%;
   position: fixed;
+  top: 0;
   background-color: whitesmoke;
   padding-left: 2%;
   padding-right: 3%;
   z-index: 2;
+  border-bottom: 1px solid rgba(74, 74, 74, 0.500); 
 }
 a {
   text-decoration: none;
@@ -23,11 +28,9 @@ a {
 }
 .banner{
   width: 100%;
-  position: absolute  ;
+  height: 50%;
+  position: relative  ;
   top: -30%;
-}
-html{
-  scroll-behavior: smooth;
 }
 .banner #banner{
   width: 100%;
@@ -38,7 +41,7 @@ html{
   display: flex;
   flex-direction: column;
   align-items: center;
-  top: 30%;
+  top: 35%;
   left: 26%;
   letter-spacing: 8px;
   color: whitesmoke;
@@ -53,11 +56,33 @@ h2{
   text-align: center;
 
 }
+#bienvenue{
+  display: flex;
+  justify-content: space-around;
+  padding-top: 7%;
+}
+#bienvenue div{
+  max-width: 35%;
+
+}
+#bienvenue img{
+  max-width: 35%;
+  clip-path: xywh(0 5px 100% 75% round 15% 0);
+}
+
+.bloc_carte{
+  border-top: 1px solid rgba(74, 74, 74, 0.500); 
+  padding-top: 4%;
+  padding-bottom: 2%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
 .carte{
   display: flex;
   justify-content: space-around;
-  margin: 5%;
-  margin-left: 0%;
+  margin-right: 10%;
+  margin-top: 1%;
 }
 .service{
   display: inline-block;
@@ -72,7 +97,124 @@ h2{
 i{
   font-size: smaller;
 }
+#infos{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  border-top: 1px solid rgba(74, 74, 74, 0.500); 
+  margin-top: 4%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+ }
+ #reseaux{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  margin: auto;
+}
+ #reseaux a{
+  padding-left: 0%;
+  width: 12%;
+  margin-top: 0%;
+  margin-left: 4%;
 
+ }
+#reseaux a img{
+  width: 100%;
+  border-radius: 5px;
+}
+#reseaux img:hover{
+  transform: scale(1.01);
+  opacity: 80%;
+}
+
+/***************/
+/******FORM*****/
+/***************/
+
+form{
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  padding: 2%;
+  border: 2px solid whitesmoke;
+  border-radius: 10px;
+}
+form h4{
+  font-weight: 500;
+  width: 115%;
+  margin-left: -2%;
+}
+form input{
+  width: 100%;
+  border: 1px solid rgb(74, 74, 74);
+}
+input{
+  border: none;
+  border-radius: 5px;
+  margin: 2%;
+  height: 22px;
+  font-family: Inria;
+}
+select{
+  border: none;
+  border-radius: 5px;
+  margin-right: 4%;
+  height: 22px;
+  font-family: Inria;
+  border: 1px solid rgb(74, 74, 74);
+}
+.nomprenom{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0%;
+  width: 103%;
+}
+#mail{
+  width: 101%;
+  margin-left: 0%;
+}
+#message{
+  height: 75px;
+  text-align: none;
+}
+#prenom{
+  margin-right: 0%;
+  margin-left: 4%;
+}
+textarea{
+  width: 101%;
+  border-radius: 7px;
+  border: 1px solid rgb(74, 74, 74);
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+#submit{
+  width: 35%;
+  margin-left: 0%;
+  color: whitesmoke;
+  background-color: rgb(74, 74, 74);
+}
+#submit:hover{
+  cursor: pointer;
+  opacity: 0.80;
+}
+
+/***************/
+/*****FOOTER****/
+/***************/ 
+footer{
+  color: whitesmoke;
+  background-color: rgb(74, 74, 74);
+  width: 100%;
+  height: 50px;
+}
 
 button {
   font-family: Oswald;
@@ -106,7 +248,7 @@ ul {
 }
 
 nav {
-  width: 250px;
+  width: 35%;
   font-size: 20px;
   list-style-type: none;
   text-align: center;
@@ -114,6 +256,10 @@ nav {
 nav li{
   display: inline-block;
   padding-left: 15px;
+}
+nav li:hover{
+  transform: scale(1.03);
+  text-shadow: 2px 2px white;
 }
 
 .spaAround {

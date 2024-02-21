@@ -1,8 +1,8 @@
 function Carte() {
   return (
-    <div>
-        <h2>Notre Carte</h2>
-        <div className='carte' id="carte">
+    <div className="bloc_carte" id="carte">
+        <h2>• Carte du moment •</h2>
+        <div className='carte'>
         <div className="service">
             <h3>• Entrées •</h3>
             <p className="plat">Pizza balls</p>
@@ -21,7 +21,7 @@ function Carte() {
             <p className="plat">Katsukarē (Curry Japonais)</p>
             <i>Porc mariné pané au panko, petits légumes dans un curry nappant accompagnés riz</i>
             <p>~</p>
-            <p className="plat">Papardelle Bolognese</p>
+            <p className="plat">Pappardelle Bolognese</p>
         </div>
         <div className="service">
             <h3>• Desserts •</h3>
@@ -30,7 +30,7 @@ function Carte() {
             <p className="plat">Tiramisu</p>
             <p>~</p>
             <p className="plat">Sorbet Artisanal</p>
-            <i>Fraise ou Pomme</i>
+            <i>Citron ou Pomme</i>
         </div>
     </div>
     </div>

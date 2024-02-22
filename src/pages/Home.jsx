@@ -7,6 +7,7 @@ import LogoBlanc from '../images/logo_grignote_white.png'
 import Fork from '../images/fork.jpg'
 import Tripadvisor from '../images/tripadvisor.png'
 import Plat from '../images/plat_ai.png'
+import Form from '../components/Form'
 function Home() {
 
   return (
@@ -46,25 +47,9 @@ function Home() {
               <a href="https://www.tripadvisor.com"><img src={Tripadvisor} alt="reserver sur tripadvisor" /></a>
             </div>
           </div>
-          <form action="submit">
-            <h4>Une question ou une suggestion? Contactez nous!</h4>
-            <div className="nomprenom">
-              <select name="civilite">
-                <option value="Madame">Mme</option>
-                <option value="Monsieur">M</option>
-              </select>
-              <input type="text" name="nom" placeholder="Nom" required/>
-              <input type="text"  name="prenom" placeholder="Prénom" id="prenom" required/>            
-            </div>
-            <input type="email" placeholder="mail@mail.com" id="mail" required/>
-            <textarea name="message" id="" cols="30" rows="5" placeholder="Votre message" required></textarea>
-            <input type="submit" id="submit" value="Envoyer"/>
-          </form>
+          <Form/>
       </div>
       <Footer/>
-
-
-
     </div>
   )
 }

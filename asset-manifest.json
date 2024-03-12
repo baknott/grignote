@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/grignote/static/css/main.6b0cd4ed.css",
+    "main.js": "/grignote/static/js/main.aa2abb70.js",
+    "static/media/banner.jpg": "/grignote/static/media/banner.c30790b150f29a6c6655.jpg",
+    "static/media/plat_ai.png": "/grignote/static/media/plat_ai.5746e512b12d302acee9.png",
+    "static/media/InriaSans-Regular.ttf": "/grignote/static/media/InriaSans-Regular.b8aeafc1e24f5145aab6.ttf",
+    "index.html": "/grignote/index.html",
+    "main.6b0cd4ed.css.map": "/grignote/static/css/main.6b0cd4ed.css.map",
+    "main.aa2abb70.js.map": "/grignote/static/js/main.aa2abb70.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6b0cd4ed.css",
+    "static/js/main.aa2abb70.js"
+  ]
+}

@@ -13,17 +13,18 @@ const serviceId = "service_dhqajzz";
 window.onload = function() {
     document.getElementById('contact-form').addEventListener('submit', function(event) {
         event.preventDefault();
+        alert('Votre message a bien été envoyé, nous vous repondrons au plus vite!');
         emailjs.sendForm(serviceId, templateId, this)
             .then(() => {
                 console.log('SUCCESS!');
             }, (error) => {
                 console.log('FAILED...', error);
             });
+
+    document.getElementById('contact-form').reset();
     });
 }
-
 ///////////////////////////
-
 
 function Form() {
     return (
@@ -38,7 +39,7 @@ function Form() {
           <input type="text" name="nom" placeholder="Nom" required/>
           <input type="text"  name="prenom" placeholder="Prénom" id="prenom" required/>            
         </div>
-        <input type="email" placeholder="mail@mail.com" id="mail" required/>
+        <input type="email" name="email" placeholder="mail@mail.com" id="mail" required/>
         <textarea name="message" id="" cols="30" rows="5" placeholder="Votre message" required></textarea>
         <input type="submit" id="submit" value="Envoyer"/>
       </form>
